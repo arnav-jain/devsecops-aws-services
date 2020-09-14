@@ -1,0 +1,20 @@
+---
+version: 0.2
+
+env:
+    git-credential-helper: yes
+
+phases:
+    install:
+        commands:
+            - yum install python3 -y
+            - curl -O https://bootstrap.pypa.io/get-pip.py
+            - python3 get-pip.py --user
+            - pip3 install trufflehog
+    pre_build:
+        commands:
+            - trufflehog --regex --entropy=False --max_depth=1 https://git-codecommit.us-east-2.amazonaws.com/v1/repos/test
+            
+artifacts:
+    files:
+        - '**/*'

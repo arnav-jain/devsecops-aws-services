@@ -4,7 +4,6 @@ env:
 phases:
   install:
     commands:
-        - yum install python3 -y
         - curl -O https://bootstrap.pypa.io/get-pip.py
         - python3 get-pip.py --user
         - pip3 install trufflehog
@@ -17,7 +16,7 @@ phases:
   build:
     commands:
       - echo Build started on `date`
-      - mvn install
+      - mvn clean install -Powasp-dependency-check
   post_build:
     commands:
       - echo Build completed on `date`

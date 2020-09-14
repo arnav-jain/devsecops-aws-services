@@ -15,6 +15,30 @@
       <scope>test</scope>
     </dependency>
   </dependencies>
+  <properties>
+    <dependency-check-maven.version>5.3.0</dependency-check-maven.version>
+  </properties>
+  <profiles>
+    <profile>
+      <id>owasp-dependency-check</id>
+      <build>
+        <plugins>
+          <plugin>
+            <groupId>org.owasp</groupId>
+            <artifactId>dependency-check-maven</artifactId>
+            <version>${dependency-check-maven.version}</version>
+            <executions>
+              <execution>
+                <goals>
+                  <goal>check</goal>
+                </goals>
+              </execution>
+            </executions>
+          </plugin>
+        </plugins>
+      </build>
+    </profile>
+  </profiles>
   <build>
     <finalName>WebApp</finalName>
   </build>
