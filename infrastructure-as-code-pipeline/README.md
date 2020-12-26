@@ -1,0 +1,1 @@
+This is a sample pipeline built in CodePipeline for DevSecOps teams to implement infrastructure-as-code template scanning.
