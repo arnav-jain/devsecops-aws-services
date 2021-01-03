@@ -1,4 +1,4 @@
-# devsecops-aws-services
+# AWS DevSecOps Pipeline Templates
 DevSecOps pipeline demo with Apache code using AWS native services (CodeCommit, CodeBuild, CodeDeploy, CodePipeline). Includes two different pipelines:
 
 1. Application scanning pipeline - built to scan vulnerable web applications using Trufflehog and OWASP Dependency Checker.
